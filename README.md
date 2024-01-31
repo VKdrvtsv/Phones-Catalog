@@ -4,6 +4,6 @@ This is a site-catalod for a hardware store. You can see some goods card on a ma
 
 This page was created using React, TypeScrips and SASS preprocessor technologies. Also BEM methodology was used during creation this project. Besides it was implemented some libraries like Swiper and Slick carousel.
 
-[DEMO LINK](https://VKdrvtsv.github.io/Phone-Catalog/)
+[DEMO LINK](https://VKdrvtsv.github.io/Phones-Catalog/)
 
 The mockup (https://www.figma.com/file/uEetgWenSRxk9jgiym6Yzp/Phone-catalog-redesign?node-id=1%3A2)
