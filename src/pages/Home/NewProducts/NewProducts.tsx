@@ -16,9 +16,10 @@ export const NewProduct = React.memo(() => {
   const theNewestProducts = products.length
     ? products
       .sort((product1, product2) => {
-        return product2.year - product1.year;
-      })
-      .sort((product1, product2) => {
+        if (product1.year !== product2.year) {
+          return product2.year - product1.year;
+        }
+
         return product2.price - product1.price;
       })
       .slice(0, 8)

@@ -13,9 +13,9 @@ import { PageContext } from '../../utils/GlobalContext';
 import { getProduct } from '../../api';
 import { ProductDetails } from '../../types/ProductDetails';
 import { NotFoundPage } from '../NotFoundPage/NotFoundPage';
-import { Product } from '../../types/Product';
 import { ProductCard } from '../ProductCard';
 import { Loader } from '../Loader';
+import { takeRandom } from '../../utils/takeRandom';
 
 export const ProductPage: React.FC = () => {
   const {
@@ -31,21 +31,7 @@ export const ProductPage: React.FC = () => {
   const [currentProduct, setCurrentProduct] = useState<ProductDetails>();
   const [isLoading, setIsLoading] = useState(false);
 
-  const takeRandom = () => {
-    const result: Product[] = [];
-    let i = 0;
-
-    while (i < 10) {
-      const random = Math.floor(Math.random() * products.length);
-
-      result.push(products[random]);
-      i += 1;
-    }
-
-    return result;
-  };
-
-  const sliderList = takeRandom();
+  const sliderList = takeRandom(products);
 
   const product = products.find(p => p.phoneId === productId) || '';
 
