@@ -31,11 +31,11 @@ export const Root = () => (
           <Route path="accessories" element={<Accessories />} />
           <Route path="favouriets" element={<Favouriets />} />
           <Route path="cart" element={<Cart />} />
-          <Route
-            path="/*"
-            element={<NotFoundPage />}
-          />
         </Route>
+        <Route
+          path="/*"
+          element={<NotFoundPage />}
+        />
       </Routes>
     </GlobalProvider>
   </Router>

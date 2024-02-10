@@ -16,6 +16,12 @@ export async function getProducts(): Promise<Product[]> {
     .then(response => response.json());
 }
 
+export async function getPhones(): Promise<Product[]> {
+  return wait(500)
+    .then(() => fetch(API_URL))
+    .then(response => response.json());
+}
+
 export async function getProduct(productID: string): Promise<ProductDetails> {
   return wait(500)
     .then(() => fetch(`${PRODUCT_URL}${productID}.json`))

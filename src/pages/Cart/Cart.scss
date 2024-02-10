@@ -183,7 +183,7 @@
       color: $the-white;
       text-align: center;
       font-family: Mont, Arial, Helvetica, sans-serif;
-      font-size: 24px;
+      font-size: 18px;
       font-weight: 700;
       letter-spacing: -0.32px;
       margin: 0;
@@ -195,6 +195,24 @@
       width: 16px;
       background: url(../..//images/icons/delete.png) center;
       justify-self: end;
+
+      @include hover(cursor, pointer);
+    }
+
+    &-buttons {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      gap: 15px;
+      height: 34px;
+    }
+
+    &-button {
+      font-family: Mont, Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.32px;
+      width: 80px;
 
       @include hover(cursor, pointer);
     }

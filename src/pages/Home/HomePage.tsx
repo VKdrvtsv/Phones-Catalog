@@ -10,6 +10,7 @@ import { NewProduct } from './NewProducts';
 export const HomePage:React.FC = React.memo(() => {
   return (
     <div className="container">
+      <h1 className="home-page_title">Product Catalog</h1>
       <BannerCarusel />
       <ProductsDiscount />
       <Categories />

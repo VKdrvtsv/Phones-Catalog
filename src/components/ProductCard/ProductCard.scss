@@ -20,6 +20,8 @@
     justify-content: center;
     text-decoration: none;
 
+    @include hover(transform, scale(1.1));
+
     &-photo {
       height: 100%;
       width: auto;

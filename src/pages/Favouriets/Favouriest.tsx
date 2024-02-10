@@ -7,8 +7,17 @@ import '../Pages.scss';
 
 import { ProductCard } from '../../components/ProductCard';
 import { Product } from '../../types/Product';
+import { Loader } from '../../components/Loader';
 
 export const Favouriets = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+
+    setTimeout(() => setIsLoading(false), 500);
+  }, []);
+
   const {
     favorietsList,
     products,
@@ -29,39 +38,45 @@ export const Favouriets = () => {
 
   return (
     <div className="products-page">
-      <div className="products-page__link-way">
-        <Link to="/home" className="products-page__home-link" />
-        <div className="products-page__way-arrow" />
-        <Link
-          to="/favouriets"
-          className="products-page__text-link"
-        >
-          Favouriets
-        </Link>
-      </div>
+      {isLoading
+        ? <Loader />
+        : (
+          <>
+            <div className="products-page__link-way">
+              <Link to="/home" className="products-page__home-link" />
+              <div className="products-page__way-arrow" />
+              <Link
+                to="/favouriets"
+                className="products-page__text-link"
+              >
+                Favouriets
+              </Link>
+            </div>
 
-      <h1 className="products-page__title">Favouriets</h1>
+            <h1 className="products-page__title">Favouriets</h1>
 
-      <p className="products-page__count">{`${favorietsList.length} items`}</p>
+            <p className="products-page__count">{`${favorietsList.length} items`}</p>
 
-      <div className="favouriets__body">
-        {favoriets.length
-          ? (
-            <>
-              {filteredFavoriets.map(product => {
-                return (
-                  <ProductCard
-                    product={product}
-                    section="favouriets"
-                    key={product.id}
-                  />
-                );
-              })}
-            </>
-          ) : (
-            <h2 className="cart__empty">Your Favouriets list is empty</h2>
-          )}
-      </div>
+            <div className="favouriets__body">
+              {favoriets.length
+                ? (
+                  <>
+                    {filteredFavoriets.map(product => {
+                      return (
+                        <ProductCard
+                          product={product}
+                          section="favouriets"
+                          key={product.id}
+                        />
+                      );
+                    })}
+                  </>
+                ) : (
+                  <h2 className="cart__empty">Your Favouriets list is empty</h2>
+                )}
+            </div>
+          </>
+        )}
     </div>
   );
 };

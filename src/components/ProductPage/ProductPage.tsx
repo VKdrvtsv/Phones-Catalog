@@ -25,7 +25,6 @@ export const ProductPage: React.FC = () => {
     favorietsList,
     setFavorietsList,
     setError,
-    error,
   } = useContext(PageContext);
   const { productId } = useParams();
   const [currentProduct, setCurrentProduct] = useState<ProductDetails>();
@@ -69,10 +68,7 @@ export const ProductPage: React.FC = () => {
 
   if (!currentProduct) {
     return (
-      <>
-        {(error)
-          && <NotFoundPage message="Phone was not found" />}
-      </>
+      <NotFoundPage message="Phone was not found" />
     );
   }
 
