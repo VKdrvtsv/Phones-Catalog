@@ -68,7 +68,10 @@ export const ProductPage: React.FC = () => {
 
   if (!currentProduct) {
     return (
-      <NotFoundPage message="Phone was not found" />
+      <>
+        {(!isLoading)
+          && <NotFoundPage message="Phone was not found" />}
+      </>
     );
   }
 
