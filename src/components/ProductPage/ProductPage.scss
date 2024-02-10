@@ -45,7 +45,9 @@
       font-family: Mont, Arial, Helvetica, sans-serif;
       font-size: 12px;
       font-weight: 600;
-      text-decoration: none;
+      text-decoration-color: $the-white;
+
+      @include hover(text-decoration-color, $secondary-text-color);
     }
   }
 

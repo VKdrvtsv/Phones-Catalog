@@ -44,8 +44,10 @@
     line-height: 21px;
     height: 42px;
     margin: 0;
-    text-decoration: none;
+    text-decoration-color: $the-white;
     width: 100%;
+
+    @include hover(text-decoration-color, $main-text-color);
   }
 
   &__prices {
@@ -130,7 +132,6 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 21px;
-
 
     @include hover(box-shadow, 0 3px 13px 0 rgba(23, 32, 49, 0.26));
     @include hover(cursor, pointer);

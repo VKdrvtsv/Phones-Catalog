@@ -21,6 +21,8 @@
     top: 0;
     margin-top: 0;
 
+    @include hover(border-color, $secondary-text-color);
+
     @include on-tablet {
       height: 189px;
     }
@@ -60,6 +62,8 @@
       border-radius: 0;
       background-color: $shadow-color;
       opacity: 1;
+
+      @include hover(background-color, $secondary-text-color);
 
       &-active {
         background-color: $main-text-color;

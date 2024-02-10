@@ -42,6 +42,10 @@
       font-weight: 600;
       margin: 0;
       margin-bottom: 4px;
+      text-decoration: underline;
+      text-decoration-color: $the-white;
+
+      @include hover(text-decoration-color, $main-text-color);
     }
 
     &-count {
@@ -55,23 +59,42 @@
   }
 
   &__photo {
-    height: 368px;
-    width: 368px;
-    margin-bottom: 24px;
+    @include hover(transform, scale(1.1));
 
-    @include on-tablet {
-      height: 187px;
-      width: 187px;
-    }
+    &-container {
+      height: 368px;
+      width: 368px;
+      margin-bottom: 24px;
+      overflow: hidden;
 
-    @include on-mobile {
-      width: 288px;;
-      height: 288px;;
+      @include on-tablet {
+        height: 187px;
+        width: 187px;
+      }
+
+      @include on-mobile {
+        width: 288px;;
+        height: 288px;;
+      }
+
+      &--phones {
+        background: $categories-phones;
+      }
+
+      &--tablets {
+        background: $categories-tablets;
+      }
+
+      &--accessories {
+        background: $categories-accessories;
+      }
     }
 
     &--phones {
-      background: $categories-phones url(../../../../public/new/img/category-phones.png) no-repeat;
-      background-size: 386px 457px;
+      background: url(../../../../public/new/img/category-phones.png) no-repeat;
+      height: 100%;
+      width: 100%;
+      background-size: 100%;
       background-position: left 73px top 8px;
 
       @include on-tablet {
@@ -86,7 +109,9 @@
     }
 
     &--tablets {
-      background: $categories-tablets url(../../../../public/new/img/category-tablets.png) no-repeat;
+      background: url(../../../../public/new/img/category-tablets.png) no-repeat;
+      height: 100%;
+      width: 100%;
       background-size: 546px 546px;
       background-position: left 22px top 20px;
 
@@ -102,7 +127,9 @@
     }
 
     &--accessories {
-      background: $categories-accessories url(../../../../public/new/img/category-accessories.png) no-repeat;
+      background: url(../../../../public/new/img/category-accessories.png) no-repeat;
+      height: 100%;
+      width: 100%;
       background-size: auto 310px;
       background-position: left 35px bottom 0;
 

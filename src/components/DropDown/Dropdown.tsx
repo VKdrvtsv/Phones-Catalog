@@ -83,20 +83,26 @@ export const Dropdown: React.FC<Props> = ({
         />
       </div>
 
-      {isShownList && (
-        <div className="dropdown__menu" role="menu">
-          {options.map(option => (
-            <Link
-              key={option.label}
-              to="/"
-              className="dropdown__option"
-              onClick={(event) => handleSelectedOption(event, option)}
-            >
-              {option.label}
-            </Link>
-          ))}
-        </div>
-      )}
+      {/* {isShownList && ( */}
+      <div
+        className={classNames(
+          'dropdown__menu',
+          { 'dropdown__menu--visible': isShownList },
+        )}
+        role="menu"
+      >
+        {options.map(option => (
+          <Link
+            key={option.label}
+            to="/"
+            className="dropdown__option"
+            onClick={(event) => handleSelectedOption(event, option)}
+          >
+            {option.label}
+          </Link>
+        ))}
+      </div>
+      {/* )} */}
     </div>
   );
 };

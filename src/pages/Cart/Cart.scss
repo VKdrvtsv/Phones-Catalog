@@ -48,6 +48,10 @@
       font-family: Mont, Arial, Helvetica, sans-serif;
       font-size: 12px;
       font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: $the-white;
+
+      @include hover(text-decoration-color, $secondary-text-color);
     }
   }
 
@@ -155,6 +159,7 @@
     }
 
     @include hover(cursor, pointer);
+    @include hover(box-shadow, 0 3px 13px 0 rgba(23, 32, 49, 0.26));
 
     &-container {
       position: absolute;
@@ -197,6 +202,7 @@
       justify-self: end;
 
       @include hover(cursor, pointer);
+      @include hover(transform, scale(1.2));
     }
 
     &-buttons {
@@ -215,6 +221,7 @@
       width: 80px;
 
       @include hover(cursor, pointer);
+      @include hover(box-shadow, 0 3px 13px 0 rgba(255, 255, 255, 0.2));
     }
   }
 

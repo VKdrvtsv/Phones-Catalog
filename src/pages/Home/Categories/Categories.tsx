@@ -21,7 +21,11 @@ export const Categories:React.FC = () => {
           className="categories__block"
           to="/phones"
         >
-          <div className="categories__photo categories__photo--phones" />
+          <div className="categories__photo-container
+            categories__photo-container--phones"
+          >
+            <div className="categories__photo categories__photo--phones" />
+          </div>
           <h3 className="categories__block-title">Mobile phones</h3>
           <p className="categories__block-count">{`${phonesCount} models`}</p>
         </Link>
@@ -29,7 +33,11 @@ export const Categories:React.FC = () => {
           className="categories__block"
           to="/tablets"
         >
-          <div className="categories__photo categories__photo--tablets" />
+          <div className="categories__photo-container
+            categories__photo-container--tablets"
+          >
+            <div className="categories__photo categories__photo--tablets" />
+          </div>
           <h3 className="categories__block-title">Tablets</h3>
           <p className="categories__block-count">{`${tabletsCount} models`}</p>
         </Link>
@@ -37,7 +45,11 @@ export const Categories:React.FC = () => {
           className="categories__block"
           to="/accessories"
         >
-          <div className="categories__photo categories__photo--accessories" />
+          <div className="categories__photo-container
+            categories__photo-container--accessories"
+          >
+            <div className="categories__photo categories__photo--accessories" />
+          </div>
           <h3 className="categories__block-title">Accessories</h3>
           <p className="categories__block-count">{`${accessoriesCount} models`}</p>
         </Link>

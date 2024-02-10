@@ -99,11 +99,17 @@ export const CartPosition: React.FC<Props> = ({
             />
 
             <div className="cart-position__photo-container">
-              <img
-                className="cart-position__photo"
-                src={`./new/${image}`}
-                alt={`${name}`}
-              />
+              <Link
+                className="cart-position__photo-link"
+                to={`/phones/${phoneId}`}
+                onClick={scrollToTop}
+              >
+                <img
+                  className="cart-position__photo"
+                  src={`./new/${image}`}
+                  alt={`${name}`}
+                />
+              </Link>
             </div>
 
             <Link

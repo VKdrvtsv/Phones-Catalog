@@ -40,6 +40,8 @@
     width: 40px;
     left: 0;
 
+    @include hover(transform, scale(1.1));
+
     @include on-mobile {
       margin-top: 8px;
     }
@@ -71,6 +73,8 @@
     letter-spacing: 0.48px;
     text-transform: uppercase;
     text-decoration: none;
+
+    @include hover (color, $main-text-color);
   }
 
   &__up-button {

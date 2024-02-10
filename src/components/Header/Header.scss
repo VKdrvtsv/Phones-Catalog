@@ -85,6 +85,23 @@
     width: $header-height-desktop;
     display: block;
 
+    &::before {
+      content: "";
+      bottom: 0;
+      position: absolute;
+      width: 100%;
+      right: 0;
+      left: 0;
+      height: 3px;
+      background: $secondary-text-color;
+      opacity: 0;
+      transition: opacity $effect-duration;
+    }
+
+    &:hover::before {
+      opacity: 1;
+    }
+
     @include on-tablet {
       height: $header-height;
       width: $header-height;
@@ -119,6 +136,8 @@
 
     &--favoriets {
       background-image: url(../../images/icons/favourites.png);
+
+
     }
 
     &--shopping-bag {
@@ -130,8 +149,6 @@
       box-sizing: border-box;
       background-image: url(../../images/icons/menu.png);
       display: none;
-
-      @include hover(cursor, pointer);
 
       @include on-mobile {
         display: block;
